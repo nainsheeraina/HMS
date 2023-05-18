@@ -1,0 +1,157 @@
+﻿/* Reset default styles */
+body, figure, h1, h2, h3, p, form, input, textarea, button {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Set up general styles */
+body {
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+header {
+    background-color: #007bff;
+    padding: 20px;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 18px;
+    transition: color 0.3s ease-in-out;
+}
+
+nav a:hover {
+    color: #e3e3e3;
+}
+
+.hero {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('hero.jpg');
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+}
+
+.hero-content {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+.hero h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: #007bff;
+    color: #fff;
+    padding: 15px 30px;
+    font-size: 18px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.cta-button:hover {
+    background-color: #0056b3;
+}
+
+.services {
+    padding: 40px;
+}
+
+.services h2 {
+    font-size: 36px;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.service-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.service-item {
+    text-align: center;
+    max-width: 300px;
+    margin: 0 20px;
+}
+
+.service-item img {
+    width: 100%;
+    max-height: 200px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.service-item h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.service-item p {
+    font-size: 18px;
+}
+
+.doctors {
+    padding: 40px;
+    background-color: #f5f5f5;
+}
+
+.doctors h2 {
+    font-size: 36px;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.doctor-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.doctor-item {
+    text-align: center;
+    max-width: 300px;
+    margin: 0 20px;
+}
+
+.doctor-item img {
+    width: 100%;
+    max-height: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+
+.doctor-item h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.doctor-item p {
+    font-size: 18

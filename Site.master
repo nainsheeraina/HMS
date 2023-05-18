@@ -1,0 +1,65 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Site.master.cs" Inherits="SiteMaster" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head id="Head1" runat="server">
+    <title></title>
+    <link href="~/Styles/Site.css" rel="stylesheet" type="text/css" />
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+    </asp:ContentPlaceHolder>
+    <style>
+    div.menu ul li
+    {
+        padding:5px;
+    }
+    
+    </style>
+</head>
+<body>
+    <form id="Form1" runat="server">
+    <div class="page">
+        <div class="header" style="background-color:#FFF !important;">
+            <div class="title">
+               <div class="row">
+            <div class="col-lg-4" style="margin-top:15px;"><img src="https://hospitalmanagementsystem.org/images/hospital-management-system-logo-dark.png" width="300" alt=""  align="left"/></div>
+            <div class="col-lg-4"></div>
+            <div class="col-lg-6 navbar-right">
+            <img src="https://www.premiermedicalhv.com/wp-content/uploads/2020/05/Protecting-Health-Header-2.png"  style="margin-left:250px;"width="400" alt=""  align="right"/>
+               </div>
+            </div>
+            </div>
+            <div class="loginDisplay">
+                <asp:LoginView ID="HeadLoginView" runat="server" EnableViewState="false">
+                    <AnonymousTemplate>
+                        <a href="FrmLogin.aspx" ID="HeadLoginStatus" runat="server" style="color:Black;"><h2><b>Log In</b></h2></a> 
+                    </AnonymousTemplate>
+                    <LoggedInTemplate>
+                        Welcome <span class="bold"><asp:LoginName ID="HeadLoginName" runat="server" /></span>!
+                        <asp:LoginStatus ID="HeadLoginStatus" runat="server" LogoutAction="Redirect" LogoutText="Log Out" LogoutPageUrl="~/"/>
+                    </LoggedInTemplate>
+                </asp:LoginView>
+            </div>
+            <div class="clear hideSkiplink">
+                <asp:Menu ID="NavigationMenu" runat="server" CssClass="menu" EnableViewState="false" IncludeStyleBlock="false" Orientation="Horizontal">
+                    <Items>
+                        <asp:MenuItem NavigateUrl="~/index.html"  Text="Home"/>
+                        <asp:MenuItem NavigateUrl="~/frmPatienttreg.aspx" Text="Patient Registration"/>
+                        <asp:MenuItem NavigateUrl="~/frmLogin.aspx" Text="Login"/>
+                    </Items>
+                </asp:Menu>
+            </div>
+        </div>
+        <div class="main">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server"/>
+        </div>
+        <div class="clear">
+        </div>
+    </div>
+    <div class="footer" style="background-color:#FFF !important;" >
+    <h3 style="color:Black; font:Times New Roman;"><b>All Rights Reserved To Hospital Management System &copy</b></h3>
+        
+    </div>
+    </form>
+</body>
+</html>

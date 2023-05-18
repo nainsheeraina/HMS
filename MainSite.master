@@ -1,0 +1,147 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MainSite.master.cs" Inherits="SiteMaster" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head id="Head1" runat="server">
+    <title></title>
+    <link href="~/Styles/Site.css" rel="stylesheet" type="text/css" />
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+    </asp:ContentPlaceHolder>
+    <style>
+    div.menu ul li
+    {
+        padding:5px;
+    }
+    
+    </style>
+</head>
+<body>
+    <form id="Form1" runat="server">
+    <div class="page">
+        <div class="header" style="background-color:#FFF !important;">
+            <div class="title"><div class="row">
+            <div class="col-lg-4" style="margin-top:15px;"><img src="https://hospitalmanagementsystem.org/images/hospital-management-system-logo-dark.png" width="300" alt=""  align="left"/></div>
+            <div class="col-lg-4"></div>
+            <div class="col-lg-4 navbar-right">
+            <img src="https://www.premiermedicalhv.com/wp-content/uploads/2020/05/Protecting-Health-Header-2.png"  style="margin-left:250px;"width="400" alt=""  align="right"/>
+               </div>
+            </div>
+           
+            </div>
+            <div class="loginDisplay">
+                <asp:LoginView ID="HeadLoginView" runat="server" EnableViewState="false">
+                    <AnonymousTemplate>
+                         <a href="FrmLogin.aspx" ID="HeadLoginStatus" runat="server" style="color:Black;"><h2><b>Log In</b></h2></a>
+                    </AnonymousTemplate>
+                    <LoggedInTemplate>
+                       
+                        <asp:LoginStatus ID="HeadLoginStatus" runat="server" LogoutAction="Redirect" LogoutText="Log Out" LogoutPageUrl="~/frmLogin.aspx" style="color:Black; font-size:medium;"/> 
+                    </LoggedInTemplate>
+                </asp:LoginView>
+            </div>
+            <div class="clear hideSkiplink">
+                <asp:LoginView ID="loginview1" runat="server">
+              <RoleGroups>
+              
+              <asp:RoleGroup Roles="ADM">
+              <ContentTemplate>
+                <asp:Menu ID="NavigationMenu" runat="server" CssClass="menu" EnableViewState="false" IncludeStyleBlock="false" Orientation="Horizontal">
+                    <Items>
+                    <asp:MenuItem NavigateUrl="~/index.html" Text="Home" />
+                        <asp:MenuItem NavigateUrl="~/ADM/Default.aspx" Text="Dashboard"/>
+                         <asp:MenuItem Text="ADD">
+                        <asp:MenuItem NavigateUrl="~/ADM/frmDoctor.aspx" Text="Add Doctor"/>
+                        <asp:MenuItem NavigateUrl="~/ADM/frmOPT.aspx" Text="Add Operator"/>
+                    
+                      
+                         </asp:MenuItem>
+                             <asp:MenuItem Text="Report">
+                              <asp:MenuItem NavigateUrl="~/ADM/Report/frmPrescriptionDetails.aspx" Text="View Prescription"/>
+                                <asp:MenuItem NavigateUrl="~/ADM/Report/frmListofUser.aspx" Text="View User Details"/>
+                                 <asp:MenuItem NavigateUrl="~/ADM/Report/frmListofappointment.aspx" Text="View Appointment Details"/>
+                             </asp:MenuItem>
+                     
+                    
+                    </Items>
+                </asp:Menu>
+              </ContentTemplate>
+              </asp:RoleGroup>
+              </RoleGroups>
+              </asp:LoginView>
+              <asp:LoginView ID="loginview2" runat="server">
+              <RoleGroups>
+              
+              <asp:RoleGroup Roles="DOC">
+              <ContentTemplate>
+                <asp:Menu ID="NavigationMenu" runat="server" CssClass="menu" EnableViewState="false" IncludeStyleBlock="false" Orientation="Horizontal">
+                    <Items>
+                    <asp:MenuItem NavigateUrl="~/index.html" Text="Home"/>
+                        <asp:MenuItem NavigateUrl="~/DOC/Default.aspx" Text="Dashboard"/>
+                         <asp:MenuItem NavigateUrl="~/DOC/frmslotallotment.aspx" Text="Patient Details"/>
+                    </Items>
+                </asp:Menu>
+              </ContentTemplate>
+              </asp:RoleGroup>
+              </RoleGroups>
+              </asp:LoginView>
+
+              <asp:LoginView ID="loginview3" runat="server">
+              <RoleGroups>
+              
+              <asp:RoleGroup Roles="USR">
+              <ContentTemplate>
+                <asp:Menu ID="NavigationMenu" runat="server" CssClass="menu" EnableViewState="false" IncludeStyleBlock="false" Orientation="Horizontal">
+                    <Items>
+                    <asp:MenuItem NavigateUrl="~/index.html" Text="Home"/>
+                        <asp:MenuItem NavigateUrl="~/USR/Default.aspx" Text="Dashboard"/>
+                        
+                      <asp:MenuItem NavigateUrl="~/USR/BookAppointment.aspx" Text="Book Appointment"/>
+                      
+                      <asp:MenuItem NavigateUrl="~/USR/frmListofappointment.aspx" Text="View Prescription"/>
+                    </Items>
+                </asp:Menu>
+              </ContentTemplate>
+              </asp:RoleGroup>
+              </RoleGroups>
+              </asp:LoginView>
+
+              <asp:LoginView ID="loginview4" runat="server">
+              <RoleGroups>
+              
+              <asp:RoleGroup Roles="OPT">
+              <ContentTemplate>
+                <asp:Menu ID="NavigationMenu" runat="server" CssClass="menu" EnableViewState="false" IncludeStyleBlock="false" Orientation="Horizontal">
+                    <Items>
+                    <asp:MenuItem NavigateUrl="~/index.html" Text="Home"/>
+                        <asp:MenuItem NavigateUrl="~/OPT/Default.aspx" Text="Dashboard"/>
+                        
+                      <asp:MenuItem NavigateUrl="~/OPT/frmListofappointment.aspx" Text="List Of Appointment"/>
+                      
+                      <asp:MenuItem NavigateUrl="~/OPT/frmslotallotment.aspx" Text="Slot Allotment"/>
+                    </Items>
+                </asp:Menu>
+              </ContentTemplate>
+              </asp:RoleGroup>
+              </RoleGroups>
+              </asp:LoginView>
+            </div>
+               <div>
+        <table>
+        <td align="right">
+            <asp:Label ID="lblMsg" runat="server" ForeColor="Black"></asp:Label></td>
+        </table>
+        </div>
+        </div>
+        <div class="main">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server"/>
+        </div>
+        <div class="clear">
+        </div>
+    </div>
+    <div class="footer" style="background-color:#FFF !important;">
+        <h3 style="color:Black; font:Times New Roman;"><b>All Rights Reserved To Hospital Management System &copy</b></h3>
+    </div>
+    </form>
+</body>
+</html>
