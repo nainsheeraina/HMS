@@ -1,6 +1,8 @@
 # HMS-MCA-Project
 This is my final semester MCA Project.
+<br>
 HMS stands for Hospital Management System. The main goal of this project is to computerize all the task which are manually managed by administrative staff of the hospital like booking of appointment,appointment confirmation,slot allotment and many more.
+<br>
 This project has 4 modules namely-Admin,Operator,Doctor and Patient.
 Admin-The admin can add operator and doctor.He/she can also find all the details of users,patient detials,prescription details and list of appoitment taken in the form of report.
 Operator-The major task of operator is to confirm the appointment of the patient and allot the their respective slots.
